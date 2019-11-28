@@ -1,6 +1,7 @@
 package pl.robertczarnik.currencyconverter.currencyRate;
 
 
+// model for JSON mapping
 public class CurrencyRate {
     private String currency;
     private Double mid;

@@ -26,6 +26,11 @@ public class CurrencyRateService {
         this.gson = builder.create();
     }
 
+    /**
+     * If currency code is valid get actual currency rate from nbp api otherwise get Optional.empty()
+     * @param code the currency code e.g. EUR
+     * @return an Optional with CurrencyRate instance or Optional.empty()
+     */
     private Optional<CurrencyRate> getActualCurrencyRateOptional(String code){
         String url = new HttpUrl.Builder()
                 .scheme("http")
@@ -56,7 +61,12 @@ public class CurrencyRateService {
         }
     }
 
-    List<CurrencyRate> getActualCurrencyRate(List<String> currencyList){
+    /**
+     * Get a list of of CurrencyRate objects
+     * @param currencyList list with currency codes
+     * @return list of CurrencyRate objects
+     */
+    public List<CurrencyRate> getActualCurrencyRate(List<String> currencyList){
         return currencyList.stream()
                 .map(this::getActualCurrencyRateOptional)
                 .filter(Optional::isPresent)

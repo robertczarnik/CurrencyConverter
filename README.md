@@ -1,11 +1,13 @@
 # Currency Exchange
 
-To run this program use:
-`docker-compose up`
+To run this program:\
+Firstly you need to grant execute permission on mvnw file `chmod 777 CurrencyConverter/mvnw`\
+Secondly use `docker-compose up` or `sudo docker-compose up` command\
+(ensure that your ports 3306 and 8080 are free) 
+
+### Rest Api:
 
 baseUrl = http://localhost:8080/api
-
-Rest Api:
 
 Get all available currencies that you can convert to each other:\
 `/convert/available`

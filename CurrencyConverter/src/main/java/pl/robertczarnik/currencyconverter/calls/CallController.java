@@ -17,7 +17,7 @@ class CallController {
     }
 
     @GetMapping("")
-    List<Call> getActualCurrencyRate(){
+    List<Call> getAllRecords(){
         return callRepository.findAll();
     }
 }
